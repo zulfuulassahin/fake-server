@@ -35,7 +35,7 @@ module.exports = (responseHandler) => {
 
 async function requestHandler(req, res, next) {
   try {
-    const { path: requestPath, method } = req;
+    const { originalUrl: requestPath , method } = req;
     const requestQuery = [requestMethods.get, requestMethods.delete].includes(method) ? req.query : { };
     const { target, parents } = parse(requestPath, requestQuery);
 
