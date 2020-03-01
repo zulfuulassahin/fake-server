@@ -23,7 +23,7 @@ async function find(target, parents) {
     const results = getWithQuery(db, name, query);
 
     if (!results.length) {
-      return { errMessage: `No ${name} with ${JSON.stringify(query)}` };
+      return { errMessage: `No ${name} with ${stringifyQuery(query)}` };
     }
   };
 
